@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Update Bundler
-        run: sudo gem install bundler
+        run: sudo gem update --system && sudo gem install bundler
       - name: Build & Deploy to GitHub Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
