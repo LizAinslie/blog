@@ -7,11 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Update Bundler
-        run: sudo gem update --system && sudo gem install bundler
       - name: Build & Deploy to GitHub Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
           GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
-        uses: BryanSchuetz/jekyll-deploy-gh-pages@master
+        uses: Li357/jekyll-deploy-gh-pages@master
