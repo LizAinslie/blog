@@ -1,0 +1,45 @@
+@import 'colors';
+
+body {
+    background-color: $light_base;
+    margin: 0;
+    font-family: cabin;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+header.page_header {
+    background-color: $light_foundation;
+    font-family: bellota;
+    border-bottom: 1px solid $light_intermediate;
+    padding: 1.7rem 0;
+    margin-bottom: 1rem;
+
+    & h1 {
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+        text-align: center;
+    }
+}
+
+.page_container {
+    min-width: 75%;
+    max-width: 80%;
+    margin: 0 auto;
+
+    &.grid {
+        display: grid;
+        grid-template-columns: auto 25%;
+        column-gap: 1rem;
+    }
+}
+
+a {
+    color: inherit;
+
+    &.no_underline {
+        text-decoration: none;
+    }
+}
