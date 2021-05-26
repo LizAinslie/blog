@@ -6,26 +6,31 @@ layout: page
 {%- comment -%} {% assign front_posts = site.posts | sort_by: 'date' %} {%- endcomment -%}
 {% for post in paginator.posts %}
     <div class='card front_page_post'>
-        <h2 class='title'>
-            <a href='{{ site.baseurl }}{{ post.url }}'>{{ post.title }}</a>
-            <span class='text_muted'>{{ post.date | date: '%B %d, %Y' }}</span>
-        </h2>
+        {% if post.card_image %}
+            <img src='{{ post.card_image }}' alt='Post image'>
+        {% endif %}
+        <div class='content'>
+            <h2 class='title'>
+                <a href='{{ site.baseurl }}{{ post.url }}'>{{ post.title }}</a>
+                <span class='text_muted'>{{ post.date | date: '%B %d, %Y' }}</span>
+            </h2>
 
-        {% assign truncated_content = '' %}
-        {% assign paragraphs = post.content | split: '</p>' %}
-        {% for paragraph in paragraphs limit: 1 %}
-            {{ truncated_content | append: paragraph }}
-            {{ truncated_content | append: '</p>' }}
-        {% endfor %}
+            {% assign truncated_content = '' %}
+            {% assign paragraphs = post.content | split: '</p>' %}
+            {% for paragraph in paragraphs limit: 1 %}
+                {{ truncated_content | append: paragraph }}
+                {{ truncated_content | append: '</p>' }}
+            {% endfor %}
 
-        <hr />
-        <a href='{{ site.baseurl }}{{ post.url }}'>Read More</a>
+            <hr />
+            <a href='{{ site.baseurl }}{{ post.url }}'>Read More</a>
+        </div>
     </div>
 {% endfor %}
 
 <div class='pagination'>
     {% if paginator.previous_page %}
-        <a href='{{ paginator.previous_page_path | relative_url }}'>&raquo;</a>
+        <a href='{{ paginator.previous_page_path | relative_url }}'>&laquo;</a>
     {% else %}
         <span>&mdash;</span>
     {% endif %}
