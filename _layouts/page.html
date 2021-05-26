@@ -7,11 +7,13 @@ layout: default
         {{ content }}
     </div>
 
-    <div class='sidebar card'>
-        <h3><a class='no_underline' href='/about'>About Me</a></h3>
-        <p>{{ site.description | truncatewords: 50 }}</p>
-        <hr />
+    <aside class='sidebar card'>
+        <div class='content'>
+            <h3><a class='no_underline' href='/about'>About Me</a></h3>
+            <p>{{ site.description | truncatewords: 50 }}</p>
+            <hr />
 
-        <a href='/about'>Read more...</a>
-    </div>
+            <a href='/about'>Read more...</a>
+        </div>
+    </aside>
 </div>
