@@ -1,0 +1,18 @@
+---
+layout: fullpage
+title: About
+permalink: /about/
+---
+
+<h2>About Me</h2>
+<p>{{ site.description }}</p>
+
+<h3>Where You Can Find Me</h3>
+<ul>
+    {% if site.twitter_username %}
+        <li><a href='https://twitter.com/{{ site.twitter_username }}'>Twitter</a></li>
+    {% endif %}
+    {% if site.github_username %}
+        <li><a href='https://github.com/{{ site.github_username }}'>GitHub</a></li>
+    {% endif %}
+</ul>

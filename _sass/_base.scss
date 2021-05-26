@@ -1,13 +1,36 @@
 @import 'colors';
 
+html, body {
+    height: 100%;
+}
+
 body {
     background-color: $light_base;
     margin: 0;
     font-family: cabin;
+    display: flex;
+    flex-direction: column;
+}
+
+#content {
+    flex: 1 0 auto;
+}
+
+#footer {
+    flex-shrink: 0;
+}
+
+#header {
+    flex-shrink: 0;
 }
 
 * {
     box-sizing: border-box;
+}
+
+p {
+    line-height: normal;
+    font-size: 1rem;
 }
 
 header.page_header {
@@ -15,19 +38,27 @@ header.page_header {
     font-family: bellota;
     border-bottom: 1px solid $light_intermediate;
     padding: 1.7rem 0;
-    margin-bottom: 1rem;
+    position: relative;
 
     & h1 {
         font-size: 3.5rem;
         line-height: 3.5rem;
         text-align: center;
     }
+
+    & a.top_right {
+        position: absolute;
+        top: .3rem;
+        right: .3rem;
+        font-size: 1.3rem;
+        text-decoration: none;
+    }
 }
 
 .page_container {
     min-width: 75%;
     max-width: 80%;
-    margin: 0 auto;
+    margin: 1rem auto;
 
     &.grid {
         display: grid;
@@ -42,4 +73,59 @@ a {
     &.no_underline {
         text-decoration: none;
     }
+}
+
+.front_page_post {
+    &:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    & h1, & h2:not(.title), & h3, & h4, & h5, & h6 {
+        line-height: normal;
+        font-size: 1rem;
+    }
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid $light_intermediate;
+}
+
+.footer {
+    border-top: 1px solid $light_intermediate;
+    background-color: $light_foundation;
+
+    padding: 1rem 0;
+
+    & p {
+        text-align: center;
+    }
+}
+
+.text_muted {
+    color: $secondary;
+    font-size: 0.7em;
+}
+
+.not_found_page {
+    margin: 1rem auto;
+    max-width: 40rem;
+    text-align: center;
+
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    & h1 {
+        margin: 2rem 0;
+        font-size: 4rem;
+        font-family: bellota;
+        line-height: 1;
+        letter-spacing: -1px;
+    }
+}
+
+img {
+    max-width: 100%
 }

@@ -3,5 +3,8 @@
 .card {
     background-color: $light_foundation;
     border: 1px solid $light_intermediate;
-    padding: 1rem;
+    
+    & .content {
+        padding: 1rem;
+    }
 }
