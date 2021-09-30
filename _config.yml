@@ -6,7 +6,7 @@ description: >-
   about tech, humor, and music, but I try not to limit myself
   to just a few things. I am transgender (MTF), and 18 years
   of age.
-baseurl: ""
+baseurl: "/blog"
 url: https://lizainslie.dev
 plugins:
   - jekyll-feed
